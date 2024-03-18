@@ -52,9 +52,8 @@ const defaultImage = '/public/static/profile.jpg';
 router.post('/', async (req, res) => {
     try {
         const response = await profileService.profileSave({...req.body, image: defaultImage});
-        res.status(STATUS.SUCCESS.OK).send(response)
+        res.status(STATUS.SUCCESS.CREATED).send(response)
     } catch (err) {
-        console.error('Error saving profile:', err);
         res.status(STATUS.SERVER_ERRORS.INTERNAL_SERVER_ERROR).send(await err);
     }
 });
@@ -89,7 +88,6 @@ router.get('/:id', async (req, res, next) => {
         }
         res.render('profile_template', {profile: response.data});
     } catch (err) {
-        console.error('Error retrieving profile:', err);
         res.status(STATUS.SERVER_ERRORS.INTERNAL_SERVER_ERROR).send('Error retrieving profile');
     }
 });
@@ -118,7 +116,6 @@ router.get('/', async (req, res, next) => {
         }
       res.status(STATUS.SUCCESS.OK).send(response);
     } catch (err) {
-        console.error('Error retrieving profile:', err);
         res.status(STATUS.SERVER_ERRORS.INTERNAL_SERVER_ERROR).send('Error retrieving profile');
     }
 });

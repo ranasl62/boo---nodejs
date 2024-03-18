@@ -48,18 +48,10 @@ const mongoServerOpts = {
         useUnifiedTopology: true,
     });
 })();
-
-const profiles = [
-    { _id:1, name: 'John Doe', description: 'Software Engineer', mbti: 'INTJ', enneagram: '5w6', zodiac: 'Libra', variant: 'Social', tritype: 531, socionics: 'LII', temperaments: 'Analytical', sloan: 'RLUE', psyche: 'Analytical', image: '/images/john_doe_profile.jpg' },
-    { _id:2, name: 'Jane Smith', description: 'Data Scientist', mbti: 'INFJ', enneagram: '4w5', zodiac: 'Aquarius', variant: 'Self-Preservation', tritype: 459, socionics: 'IEI', temperaments: 'Creative', sloan: 'SCUE', psyche: 'Empathetic', image: '/images/jane_smith_profile.jpg' }
-];
-
-(async ()=>{
-    // Insert comments into the database
-    await Profile.insertMany(profiles);
-})()
-
 // start server
 const server = app.listen(port);
 
 console.log('Express started. Listening on %s', port, server);
+
+
+module.exports=app;
