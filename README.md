@@ -9,7 +9,6 @@ This is a simple CRUD API application built with Express.js and MongoDB, providi
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
 - [Testing](#testing)
-- [License](#license)
 
 ## Overview
 The Boo Profile, Comments, Like API is designed to facilitate the management of user profiles, comments, and likes within an application. It allows users to perform CRUD operations on profiles, post comments on profiles, and like/unlike comments.
