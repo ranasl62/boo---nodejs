@@ -35,6 +35,7 @@ The following API endpoints are available:
 - **Profiles**
     - `POST /profiles`: Create a new profile.
     - `GET /profiles/:id`: Get a profile by ID.
+![web view - localhost:3000/profiles/:id](https://awesomescreenshot.s3.amazonaws.com/image/5213829/46841445-fea3e130f72049f3cb98e83a3d24968b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20240318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240318T095315Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=1e1233caa4d86f13ffaa0e9870744d416be0a4093bd4cc29d877a520eeef85e8)
     - `GET /profiles`: Get all profiles.
 
 - **Comments**
