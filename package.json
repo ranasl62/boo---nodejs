@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "test": "node generate-test-script.js && npx jest --detectOpenHandles",
+    "test": "jest",
+    "test2": "node generate-test-script.js && npx jest --detectOpenHandles",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
