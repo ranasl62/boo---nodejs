@@ -49,7 +49,7 @@ The following API endpoints are available:
 
 - **Swagger Documentation**
     - `GET /api-docs`: Swagger documentation for the API.
-
+![Swagger](https://tinyurl.com/2b3qvbuo)
 ## Testing
 To run tests for the API, use the following command:
 ```bash
