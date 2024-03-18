@@ -1,10 +1,9 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "jest && exit 1",
+    "test": "node generate-test-script.js && npx jest --detectOpenHandles",
     "start": "node app.js",
     "dev": "nodemon app.js"
   },
@@ -22,8 +21,21 @@
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
+    "faker": "^6.6.6",
     "jest": "^29.7.0",
     "nodemon": "^3.1.0",
     "supertest": "^6.3.4"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ranasl62: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@github.com/ranasl62/boo---nodejs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ranasl62/boo---nodejs/issues"
+  },
+  "homepage": "https://github.com/ranasl62/boo---nodejs#readme",
+  "description": ""
 }

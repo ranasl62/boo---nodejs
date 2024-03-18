@@ -49,9 +49,11 @@ const mongoServerOpts = {
     });
 })();
 // start server
-const server = app.listen(port);
+if (process.env.NODE_ENV !== 'test') {
+    app.listen(port);
+}
 
-console.log('Express started. Listening on %s', port, server);
+console.log('Express started. Listening on %s', port);
 
 
-module.exports=app;
+module.exports = app;

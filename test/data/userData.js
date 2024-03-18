@@ -1,4 +1,5 @@
 const profile1 = {
+    _id: 1,
     "name": "John Doe",
     "description": "Software Engineer",
     "mbti": "INTJ",
@@ -12,6 +13,7 @@ const profile1 = {
 };
 
 const profile2 = {
+    _id: 2,
     "name": "John Doe",
     "description": "Software Engineer",
     "mbti": "INTJ",
@@ -25,6 +27,7 @@ const profile2 = {
 };
 
 const profile3 = {
+    _id: 3,
     "name": "John Doe",
     "description": "Software Engineer",
     "mbti": "IN2TJ", // this is not correct value as we define in enum in Profile schema
@@ -37,4 +40,4 @@ const profile3 = {
     "psyche": "Analytical"
 }
 
-module.exports = {profile1, profile2,profile3};
+module.exports = {profile1, profile2, profile3};

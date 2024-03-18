@@ -2,15 +2,16 @@ const request = require('supertest');
 const app = require('../app'); // Assuming your Express app is exported from app.js
 const mongoose = require('mongoose');
 const Profile = require('../models/profile');
-const {profile1,profile2,profile3} = require('./data/userData');
+const {profile1, profile2, profile3} = require('./data/userData');
+
+
 // Example test suite for creating a new profile
 describe('Create New Profile', () => {
+
     let profileId;
 
     // Test creating a new profile
     test('Create new profile', async () => {
-
-
         const response = await request(app)
             .post('/profiles')
             .send(profile1)
@@ -61,9 +62,7 @@ describe('Create New Profile', () => {
 
     // Clean up: delete the created profile after the test
     afterAll(async () => {
-        // Delete the created profile from the database
-        await Profile.findByIdAndDelete(profileId);
-        // Close the MongoDB connection
-        await mongoose.connection.close();
+        await Profile.deleteMany({}); // Clean up the database
+        await mongoose.disconnect(); // Close the MongoDB connection
     });
 });

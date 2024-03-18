@@ -57,8 +57,8 @@ const CommentFilterTransformer = require("./../transformer/commentFilter");
 
 router.post('/', async (req, res) => {
     try {
-        const newComment = await commentService.createComment(req.body);
-        res.status(STATUS.SUCCESS.OK).json(newComment);
+        const response = await commentService.createComment(req.body);
+        res.status(response.status).json(response);
     } catch (error) {
         res.status(STATUS.SERVER_ERRORS.INTERNAL_SERVER_ERROR).json({error: error.message});
     }
