@@ -10,7 +10,8 @@ const router = express.Router();
 const commentService = require('../services/comment-service');
 const STATUS = require("./../utils/statusCode");
 const CommentFilterTransformer = require("./../transformer/commentFilter");
-
+const GLOBALCALLBACKAPIRESPONSE = require("./../callbacks/globalRouteCallBack");
+const {response} = require("express");
 /**
  * @swagger
  * /comments:
@@ -97,13 +98,14 @@ router.post('/', async (req, res) => {
  *         description: Internal server error
  */
 
-router.get('/:profileId', async (req, res) => {
+router.get('/:profileId',  (req, res) => {
     try {
         const profileId = req.params.profileId;
         const {sortBy, type} = req.query;
         const {filterQuery, sortField} = CommentFilterTransformer({sortBy: sortBy, type: type, profileId: profileId});
-        const response = await commentService.filterAndSortComments({sort: sortField, query: filterQuery});
-        return res.status(response.status).json(response);
+        commentService.filterAndSortComments({sort: sortField, query: filterQuery}, ((err,response)=>{
+            return GLOBALCALLBACKAPIRESPONSE(err,response,res);
+        }));
     } catch (error) {
         res.status(STATUS.SERVER_ERRORS.INTERNAL_SERVER_ERROR).json({error: error.message});
     }

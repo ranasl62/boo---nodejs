@@ -14,12 +14,13 @@ module.exports = {
         }
     },
 
-    filterAndSortComments: async ({query = {}, sort = {}}) => {
+    filterAndSortComments: async ({query = {}, sort = {}}, callback) => {
         try {
             const comments = await Comment.find(query).sort(sort).populate('commenter');
-            return GlobalResponse(STATUS.SUCCESS.OK, "Comments retried successfully", comments);
+            const response = GlobalResponse(STATUS.SUCCESS.OK, "Comments retried successfully", comments);
+            callback(null, response);
         } catch (err) {
-            return GlobalResponse(err);
+            return GlobalErrorHander(err);
         }
     },
 };
