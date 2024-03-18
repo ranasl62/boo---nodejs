@@ -39,7 +39,7 @@ The following API endpoints are available:
 
 - **Comments**
     - `POST /comments`: Create a new comment.
-    - `GET /comments/:profileId`: Get comments for a specific profile.
+    - `GET /comments/:profileId`: Get comments for a specific profile with filter or without filter.
 
 - **Likes**
     - `POST /comments/:commentId/like`: Like/Unlike a comment.
