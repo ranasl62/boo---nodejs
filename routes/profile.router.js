@@ -52,7 +52,7 @@ const defaultImage = '/public/static/profile.jpg';
 router.post('/', async (req, res) => {
     try {
         const response = await profileService.profileSave({...req.body, image: defaultImage});
-        res.status(STATUS.SUCCESS.CREATED).send(response)
+        res.status(response.status).send(response)
     } catch (err) {
         res.status(STATUS.SERVER_ERRORS.INTERNAL_SERVER_ERROR).send(await err);
     }
