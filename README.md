@@ -49,7 +49,7 @@ The following API endpoints are available:
 
 - **Swagger Documentation**
     - `GET /api-docs`: Swagger documentation for the API.
-![Swagger](https://tinyurl.com/2b3qvbuo)
+![Swagger](https://awesomescreenshot.s3.amazonaws.com/image/5213829/46841275-577b365f46eeeb8b55e698087dd16a7f.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJSCJQ2NM3XLFPVKA%2F20240318%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240318T095019Z&X-Amz-Expires=28800&X-Amz-SignedHeaders=host&X-Amz-Signature=57ab9c600924bd8f5cead9c50d9bc307f642e49c5416ab0beeb288faf6ab8113)
 ## Testing
 To run tests for the API, use the following command:
 ```bash
